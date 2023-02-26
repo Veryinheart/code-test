@@ -11,7 +11,10 @@ function Header() {
       }}
     >
       <Link href="/">Home</Link>
-      <Link href="/favourites">Favourites</Link>
+      &nbsp;
+      <Link href="/spells">Spells</Link>
+      &nbsp;
+      <Link href="/favorites">Favorites</Link>
     </div>
   );
 }

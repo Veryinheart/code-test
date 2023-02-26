@@ -1,0 +1,15 @@
+.spell {
+  padding: 2.5rem;
+  margin: 0.5rem;
+  color: black;
+  background-color: #f5f6f9;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item {
+  padding-top: 1.25rem;
+}

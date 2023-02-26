@@ -1,28 +1,35 @@
 import Link from 'next/link';
 import React from 'react';
 import { Spells, SpellListItem } from '../../typings.s';
+import styles from './page.module.css';
 
 const fetchSpells = async () => {
   const res = await fetch('https://www.dnd5eapi.co/api/spells');
   const spells: Spells = await res.json();
-
+  console.log(spells);
   return spells;
 };
 
 async function SpellList() {
   const { results: spells } = await fetchSpells();
-  // console.log(spells);
+
   return (
-    <>
+    <div className={styles.container}>
+      <p>Spell List:</p>
       {spells &&
         spells.map((spell: SpellListItem) => (
-          <div key={spell.index}>
-            <Link href={`/spells/${spell.index}`}>
-              <p>Spell Name: {spell.name}</p>
-            </Link>
+          <div key={spell.index} className={styles.listItem}>
+            <div>
+              <Link href={`/spells/${spell.index}`}>
+                <div className={styles.listItem}> {spell.name}</div>
+              </Link>
+            </div>
+            <div>
+              <button>Add to Favorite</button>
+            </div>
           </div>
         ))}
-    </>
+    </div>
   );
 }
 
