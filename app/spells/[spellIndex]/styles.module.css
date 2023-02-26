@@ -1,9 +1,6 @@
 .spell {
   padding: 2.5rem;
   margin: 0.5rem;
-  color: black;
-  background-color: #f5f6f9;
-  border-width: 2px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,4 +9,11 @@
 
 .item {
   padding-top: 1.25rem;
+}
+
+.button {
+  padding: 1rem;
+  color: black;
+  background-color: #3b82f6;
+  border-radius: 10px;
 }

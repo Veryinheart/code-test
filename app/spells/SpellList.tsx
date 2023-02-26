@@ -13,6 +13,10 @@ const fetchSpells = async () => {
 async function SpellList() {
   const { results: spells } = await fetchSpells();
 
+  // const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  //   console.log(e);
+  // };
+
   return (
     <div className={styles.container}>
       <p>Spell List:</p>
@@ -20,12 +24,13 @@ async function SpellList() {
         spells.map((spell: SpellListItem) => (
           <div key={spell.index} className={styles.listItem}>
             <div>
-              <Link href={`/spells/${spell.index}`}>
-                <div className={styles.listItem}> {spell.name}</div>
+              <Link href={`/spells/${spell.index}`} className={styles.listItem}>
+                {' '}
+                {spell.name}
               </Link>
             </div>
             <div>
-              <button>Add to Favorite</button>
+              <Link href={`/spells/${spell.index}`}>Details</Link>
             </div>
           </div>
         ))}
