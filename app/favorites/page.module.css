@@ -7,11 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.25rem;
+  font: 1.25rem sans-serif;
 }
 
 .header {
   font-size: 2rem;
   padding-bottom: 1rem;
-  ;
 }

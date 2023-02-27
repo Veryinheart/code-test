@@ -6,20 +6,15 @@ import styles from './page.module.css';
 const fetchSpells = async () => {
   const res = await fetch('https://www.dnd5eapi.co/api/spells');
   const spells: Spells = await res.json();
-  console.log(spells);
   return spells;
 };
 
 async function SpellList() {
   const { results: spells } = await fetchSpells();
 
-  // const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-  //   console.log(e);
-  // };
-
   return (
     <div className={styles.container}>
-      <p>Spell List:</p>
+      <p className={styles.header}>Spell List:</p>
       {spells &&
         spells.map((spell: SpellListItem) => (
           <div key={spell.index} className={styles.listItem}>
@@ -30,7 +25,7 @@ async function SpellList() {
               </Link>
             </div>
             <div>
-              <Link href={`/spells/${spell.index}`}>Details</Link>
+              <Link href={`/spells/${spell.index}`}>See Details</Link>
             </div>
           </div>
         ))}

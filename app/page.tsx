@@ -9,8 +9,11 @@ export default function Home() {
           marginTop: '2rem',
         }}
       >
-        You can check 5th Dnd Spells here, please click Spells above to see all
-        spells.
+        <p style={{ padding: '2rem', fontSize: '2rem' }}>
+          You can check 5th Dnd Spells here, please click Spells above to see all
+          spells.
+        </p>
+
       </div>
     </main>
   );
