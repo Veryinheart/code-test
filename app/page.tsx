@@ -10,7 +10,7 @@ export default function Home() {
         }}
       >
         <p style={{ padding: '2rem', fontSize: '2rem' }}>
-          You can check 5th Dnd Spells here, please click Spells above to see all
+          You can check 5th Dungeons & Dragons Spells here, please click Spells above to see all
           spells.
         </p>
 

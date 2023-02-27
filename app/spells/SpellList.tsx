@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { Spells, SpellListItem } from '../../typings.s';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 
 const fetchSpells = async () => {
   const res = await fetch('https://www.dnd5eapi.co/api/spells');

@@ -30,8 +30,9 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
 
     const checkIsFavorited = () => {
       const favoritesList = JSON.parse(localStorage.getItem('favorites') || '{}');
-
-      setIsFavorited(favoritesList.includes(spellIndex))
+      if (Array.isArray(favoritesList)) {
+        setIsFavorited(favoritesList?.includes(spellIndex))
+      }
     }
 
     fetchSpellInfo(spellIndex);
@@ -85,9 +86,9 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
           <Item>Ritual: {spellInfo?.concentration ? 'Yes' : 'No'}</Item>
           <Item>Casting Time: {spellInfo?.casting_time} </Item>
           <Item>Level: {spellInfo?.level}</Item>
-          <Item>School:{spellInfo?.school.name}</Item>
-          <Item>Classes:{spellInfo?.classes[0]?.name}</Item>
-          <Item>Subclasses:{spellInfo?.subclasses[0]?.name}</Item>
+          <Item>School: {spellInfo?.school?.name}</Item>
+          <Item>Classes: {spellInfo?.classes[0]?.name}</Item>
+          <Item>Subclasses: {spellInfo?.subclasses[0]?.name}</Item>
         </>
       )}
     </div>
