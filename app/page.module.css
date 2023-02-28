@@ -1,6 +1,7 @@
 .container {
   padding: 2rem;
   border-width: 2px;
+  height: 100vh;
 }
 
 .listItem {
