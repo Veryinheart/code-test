@@ -69,7 +69,7 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
 
   return (
     <div className={styles.spell}>
-      {isloading && <div>loading</div>}
+      {isloading && <div className={styles.loading}>loading</div>}
       {spellInfo && (
         <>
           <button
