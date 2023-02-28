@@ -1,7 +1,11 @@
 .container {
   padding: 2rem;
-  border-width: 2px;
-  height: 100vh;
+}
+
+.listContainer {
+  padding: 2rem;
+  overflow: auto;
+  height: 1000px;
 }
 
 .listItem {
@@ -14,4 +18,33 @@
 .header {
   font-size: 2rem;
   padding-bottom: 1rem;
+}
+
+.headerContainer {
+  padding: 1.25rem;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.spellsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media (width <768px) {
+  .spellsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listContainer {
+    height: 40vh;
+  }
 }

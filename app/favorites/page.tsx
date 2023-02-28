@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import styles from '../page.module.css'
+import styles from '../page.module.css';
 
 function Favorites() {
   const [favoritesList, setFavoriteList] = useState<string[]>();
@@ -17,11 +17,18 @@ function Favorites() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>Favorites List</div>
-
-      {Array.isArray(favoritesList) ? (favoritesList?.map((spell) =>
-        <Link href={`/spells/${spell}`} key={spell} className={styles.listItem} >{spell}</Link>
-      )) : `Nothing in your favorites list, let's add some!`}
+      <h1 className={styles.header}>Favorites List</h1>
+      <ul>
+        {Array.isArray(favoritesList)
+          ? favoritesList?.map((spell) => (
+              <li key={spell}>
+                <Link href={`/spells/${spell}`} className={styles.listItem}>
+                  {spell}
+                </Link>
+              </li>
+            ))
+          : `Nothing in your favorites list, let's add some!`}
+      </ul>
     </div>
   );
 }

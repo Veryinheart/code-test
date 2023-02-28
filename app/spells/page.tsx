@@ -1,12 +1,10 @@
 import React from 'react';
-import SpellList from './SpellList';
+import styles from '../page.module.css';
 
 function Spells() {
   return (
-    <div>
-      {/*Nextjs 13 has Promise<element> is not a vaild JSX bug now, they are working on it*/}
-      {/* @ts-ignore */}
-      <SpellList />
+    <div className={styles.container}>
+      <h1>This is where the spell detail will be shown</h1>
     </div>
   );
 }

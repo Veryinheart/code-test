@@ -13,7 +13,7 @@ async function SpellList() {
   const { results: spells } = await fetchSpells();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.listContainer}>
       <p className={styles.header}>Spell List:</p>
       {spells &&
         spells.map((spell: SpellListItem) => (
@@ -23,9 +23,6 @@ async function SpellList() {
                 {' '}
                 {spell.name}
               </Link>
-            </div>
-            <div>
-              <Link href={`/spells/${spell.index}`}>See Details</Link>
             </div>
           </div>
         ))}
