@@ -12,9 +12,9 @@ type PageProps = {
 };
 
 function SpellInfo({ params: { spellIndex } }: PageProps) {
-
   const [spellInfo, setSpellInfo] = useState<SpellInfoType>();
   const [isFavorited, setIsFavorited] = useState(false);
+  const [isloading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchSpellInfo = async (index: string) => {
@@ -26,27 +26,27 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
       );
       const data: SpellInfoType = await response.json();
       setSpellInfo(data);
+      setIsLoading(false);
     };
 
     const checkIsFavorited = () => {
-      const favoritesList = JSON.parse(localStorage.getItem('favorites') || '{}');
+      const favoritesList = JSON.parse(
+        localStorage.getItem('favorites') || '{}'
+      );
       if (Array.isArray(favoritesList)) {
-        setIsFavorited(favoritesList?.includes(spellIndex))
+        setIsFavorited(favoritesList?.includes(spellIndex));
       }
-    }
+    };
 
     fetchSpellInfo(spellIndex);
     checkIsFavorited();
-
   }, [spellIndex]);
 
-  // add spell index into localstorage 
+  // add spell index into localstorage
   function handleClick(value: string): void {
     const favoritesList = JSON.parse(localStorage.getItem('favorites') || '{}');
 
-
     if (Array.isArray(favoritesList)) {
-
       if (isFavorited) {
         const index = favoritesList.indexOf(value);
         favoritesList.splice(index, 1);
@@ -69,6 +69,7 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
 
   return (
     <div className={styles.spell}>
+      {isloading && <div>loading</div>}
       {spellInfo && (
         <>
           <button
