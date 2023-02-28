@@ -19,7 +19,7 @@ function Favorites() {
     <div className={styles.container}>
       <h1 className={styles.header}>Favorites List</h1>
       <ul>
-        {Array.isArray(favoritesList)
+        {Array.isArray(favoritesList) && favoritesList.length > 0
           ? favoritesList?.map((spell) => (
               <li key={spell}>
                 <Link href={`/spells/${spell}`} className={styles.listItem}>
