@@ -1,6 +1,6 @@
 ## Getting Started
 
-This application is developed by NextJs 13 and deployed on Vercel, please check the [Live Demo](https://dnd5spells.vercel.app/);
+This application is built with NextJs 13 and deployed on Vercel, please check the [Live Demo](https://dnd5spells.vercel.app/);
 
 First, before run the app, you need to install all the dependencies needed by following command
 
