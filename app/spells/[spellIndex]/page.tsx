@@ -14,7 +14,6 @@ type PageProps = {
 function SpellInfo({ params: { spellIndex } }: PageProps) {
   const [spellInfo, setSpellInfo] = useState<SpellInfoType>();
   const [isFavorited, setIsFavorited] = useState(false);
-  const [isloading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchSpellInfo = async (index: string) => {
@@ -26,7 +25,6 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
       );
       const data: SpellInfoType = await response.json();
       setSpellInfo(data);
-      setIsLoading(false);
     };
 
     const checkIsFavorited = () => {
@@ -69,7 +67,6 @@ function SpellInfo({ params: { spellIndex } }: PageProps) {
 
   return (
     <div className={styles.spell}>
-      {isloading && <div className={styles.loading}>loading</div>}
       {spellInfo && (
         <>
           <button
